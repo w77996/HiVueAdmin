@@ -1,7 +1,7 @@
 <template>
   <el-form ref="LoginFrom" :model="account" label-position="left" label-width="0px"
            class="demo-ruleForm login-container">
-    <h3 class="title">系统登录{{this.$store.state.city}}</h3>
+    <h3 class="title">系统登录{{this.$store.state.res}}</h3>
     <el-form-item prop="username">
       <el-input type="text" v-model="account.username" auto-complete="off" placeholder="账号"></el-input>
     </el-form-item>
@@ -10,14 +10,13 @@
     </el-form-item>
     <el-form-item style="width:100%;">
       <el-button type="primary" style="width:100%;" @click="login">登录</el-button>
-      <el-button type="primary" style="width:100%;" @click="handleClick">ce</el-button>
     </el-form-item>
   </el-form>
 </template>
 
 <script>
   import {Message} from 'element-ui'
-  import { mapMutations ,mapState } from 'vuex'
+  import { mapMutations  } from 'vuex'
   export default {
     name: 'Login',
     data() {
@@ -38,11 +37,6 @@
         }
       }
     },
-    computed: {
-      ...mapState({
-        currentCity: 'city'
-      })
-    },
     methods: {
       login() {
         var _this = this;
@@ -54,7 +48,7 @@
             }
           }).then(function (response) {
             console.log("response",response.data)
-            this.changeCity(response.data)
+            this.changeRes(response.data)
             // this.$store.commit('changeCity','ddddd')
           }.bind(this)).catch(function (response) {
             console.log(response)
@@ -77,10 +71,7 @@
         }
         return true;
       },
-      handleClick(res) {
-        this.changeCity(res)
-      },
-      ...mapMutations(['changeCity']),
+      ...mapMutations(['changeRes'])
     }
   }
 </script>

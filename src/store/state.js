@@ -1,10 +1,10 @@
-let defaultCity = '上海'
+let defaultRes = 'default res'
 try {
-  if (localStorage.city) {
-    defaultCity = localStorage.city
+  if (localStorage.res) {
+    defaultRes = localStorage.res
   }
 } catch (e) {}
 
 export default {
-  city: defaultCity
+  res: defaultRes
 }

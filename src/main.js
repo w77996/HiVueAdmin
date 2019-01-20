@@ -6,7 +6,7 @@ import ElementUI from 'element-ui';
 import router from './router'
 import 'styles/reset.css'
 import 'element-ui/lib/theme-chalk/index.css';
-import store from './store/index.js'
+import store from './store'
 Vue.use(ElementUI);
 import {
   api,

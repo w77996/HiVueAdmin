@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <h1>{{ this.city }}</h1>
+    <h1>{{ this.res }}</h1>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
   export default {
     name: 'Index',
     computed: {
-      ...mapState(['city'])
+      ...mapState(['res'])
     },
     data () {
       return {
